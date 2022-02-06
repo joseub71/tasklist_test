@@ -1,0 +1,23 @@
+.task-list-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 10vw;
+}
+
+.task-list-item{
+  background-color: #20c4db;
+  height: 100px;  
+  min-width: 20vw;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: all .2s ease-in-out;
+}
+
+.task-list-item:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 5px 5px 2px 0px #24dff9, 9px 9px 2px 0px #82e7f5;
+  border-radius: 5px;
+}
