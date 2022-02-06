@@ -1,0 +1,19 @@
+.task-banner-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(31,196,219,1) 24%, rgba(32,32,93,0.8575805322128851) 72%);
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+}
+
+.logo-styles{
+  width: 3em;
+  margin-right: 1em ;
+}
