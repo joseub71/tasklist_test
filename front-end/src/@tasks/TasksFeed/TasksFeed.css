@@ -21,3 +21,12 @@
   box-shadow: 5px 5px 2px 0px #24dff9, 9px 9px 2px 0px #82e7f5;
   border-radius: 5px;
 }
+
+@media only screen and (max-width: 800px) {
+  .task-list-container {
+    flex-direction: column;
+  }
+  .task-list-item{
+    margin-top: 30px;
+  }
+}

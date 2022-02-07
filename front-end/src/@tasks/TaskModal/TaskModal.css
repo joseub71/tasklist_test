@@ -1,0 +1,44 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position: fixed;
+  background: white;
+  min-width: 30vw;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.modal-div{
+  padding: 20px 15px;
+  border-bottom: 0.5px solid #c9c2c2;
+}
+
+.display-block {
+  display: block;
+  animation-name: getUpModal;
+  animation-duration: 0.4s;
+}
+
+.display-none {
+  display: none;
+}
+
+@keyframes getUpModal{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

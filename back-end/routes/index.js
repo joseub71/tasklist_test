@@ -8,7 +8,6 @@ router.get("/", (req, res) => {
 
 router.get("/tasks", async(req, res) => {
   try {
-    // TASK_NUMBER: 'some value',
     const getTitlesRes = await service.getTitles()
     let result = []
     if (getTitlesRes?.data) {
@@ -25,7 +24,7 @@ router.get("/tasks", async(req, res) => {
 router.put("/tasks", async(req, res) => {
   try {
     console.log('Get Request', req);
-    res.send({ response: 'holis' }).status(200);
+    res.send({ response: 'Ok' }).status(200);
   } catch (error) {
     console.log('Algo salio mal', error);
   }

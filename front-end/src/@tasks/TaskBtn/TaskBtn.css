@@ -1,5 +1,4 @@
 .btn-container{
-  background-color: #1fc4db;
   padding: 7px 15px;
   min-width: 50px;
   border: none;
@@ -10,14 +9,35 @@
   align-items: center;
 }
 
-.btn-container:hover{
+.btn-container.blue{
+  background-color: #1fc4db;
+}
+
+.btn-container.blue:hover{
   transform: scale(1.1);
   cursor: pointer;
   box-shadow: 5px 5px 2px 0px #24dff9, 9px 9px 2px 0px #82e7f5;
   border-radius: 5px;
 }
 
+.btn-container.red{
+  background-color: #e55a7a;
+}
+
+.btn-container.red:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 5px 5px 2px 0px #cd657d, 9px 9px 2px 0px #e1a5b3;
+  border-radius: 5px;
+}
+
 .pencil-icon{
+  font-size: 25px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.check-icon{
   font-size: 25px;
   color: #fff;
   font-weight: bold;

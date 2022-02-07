@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - 5213:27017
+
+  backend :
+    build : 
+      context : 
+        .
+      dockerfile : 
+        ./back-end/Dockerfile
+    depends_on:
+      - mongo
+    ports:
+      - 4000:4000
+    command: npm start
+    
+
+  frontend: 
+    build : 
+      context : 
+        .
+      dockerfile : 
+        ./front-end/Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - 3000:3000
+    env_file:
+      ./front-end/.env
+    command: npm start 
+

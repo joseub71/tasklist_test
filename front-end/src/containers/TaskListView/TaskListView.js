@@ -1,25 +1,46 @@
 import './TaskListView.css';
-import { TasksFeed, TaskModal, TaskBanner } from "@tasks";
+import { TasksFeed, TaskBanner } from "@tasks";
+import CompleteTask from "components/CompleteTask/CompleteTask"
+import { useEffect, useState } from 'react';
+import {taskGetServices} from "services/tasksServices"
+import { Oval } from 'react-loader-spinner';
 
 function TaskListView() {
+  const [taskList, setTaskList] = useState([])
+  const [loading, setLoading] = useState(true)
+  useEffect(async () => {
+    async function fetchData() {
+      try {
+        const result = await taskGetServices()
+        setTaskList(result?.data?.response)
+        setLoading(false)
+      } catch (error) {
+        alert('Disculpe algo salio mal')
+      }
+    }
+    fetchData();
+  }, [])
+
   return (
     <div className="task-container">
       <TaskBanner/>
-      <TasksFeed taskList={[
-        { 
-          uuid: 1,
-          title: "sunt voluptatem dicta",
-        },
-        { 
-          uuid: 2,
-          title: "commodi rerum consequatur"
-        },
-        { 
-          uuid: 3,
-          title: "suscipit suscipit quia"
-        }
-      ]}/>
-      <TaskModal/>
+      <TasksFeed taskList={taskList}/>
+
+      {
+      loading &&
+      <div className="spinner">
+        <Oval
+          ariaLabel="loading-indicator"
+          height={100}
+          width={100}
+          strokeWidth={5}
+          color="#1fc4db"
+          secondaryColor="#20205ddb"
+        />
+      </div>
+      }
+
+     <CompleteTask/>
     </div>
   );
 }
