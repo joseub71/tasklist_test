@@ -8,13 +8,14 @@ import { Oval } from 'react-loader-spinner';
 function TaskListView() {
   const [taskList, setTaskList] = useState([])
   const [loading, setLoading] = useState(true)
-  useEffect(async () => {
+  useEffect(() => {
     async function fetchData() {
       try {
         const result = await taskGetServices()
         setTaskList(result?.data?.response)
         setLoading(false)
       } catch (error) {
+        console.log(error);
         alert('Disculpe algo salio mal')
       }
     }
